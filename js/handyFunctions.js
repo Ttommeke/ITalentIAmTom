@@ -90,7 +90,6 @@ let danceCube = function(delta) {
         }
 
         totalDanceTime += delta;
-        console.log(f);
     }
 
 }

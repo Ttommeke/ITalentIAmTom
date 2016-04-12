@@ -8,6 +8,8 @@ let ROCK_COLOR = 0x776d5e;
 let TREE_TRUNK_COLOR = 0x604b18;
 let LEAF_COLOR = 0x06b500;
 
+let fadingObjects = [];
+
 let generateMap = function(map) {
     for (let x = 0; x < map.length; x++) {
         for (let z = 0; z < map[x].length; z++) {
@@ -58,16 +60,18 @@ let generateMap = function(map) {
                 let cubeB = createCube(BRIDGE_RAIL_COLOR, -x,-1,-z, 1,1,1);
                 cubeB.material.transparent = true;
                 cubeB.material.opacity = 0;
+                fadingObjects.push( cubeB );
                 scene.add( cubeB );
 
-                eventMap.push(new eventMapItem( x, z-1, () => { cubeB.material.opacity = 1; }, undefined));
-                eventMap.push(new eventMapItem( x-1, z-1, () => { cubeB.material.opacity = 1; }, undefined));
-                eventMap.push(new eventMapItem( x+1, z-1, () => { cubeB.material.opacity = 1; }, undefined));
+                let displayCube = () => { cubeB.material.wantedOpacity = 1; };
+
+                eventMap.push(new eventMapItem( x, z-1, displayCube, undefined));
+                eventMap.push(new eventMapItem( x-1, z-1, displayCube, undefined));
+                eventMap.push(new eventMapItem( x+1, z-1, displayCube, undefined));
             }
             else if (map[x][z] == 15) {
                 for (let i = 0; i < 7; i++) {
                     scene.add( createCube(WATER_COLOR, -x - 0.5 + Math.random(),Math.random(),-z -0.5 + Math.random(), Math.random(),Math.random(),Math.random()) );
-                    console.log(Math.random());
                 }
             }
             else if (map[x][z] == 4) {

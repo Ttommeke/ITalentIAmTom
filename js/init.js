@@ -10,7 +10,7 @@ renderer.setClearColor( 0x2ad3d6, 1 );
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-let cube = createCube(0x0000AA, -11,0,-4, 0.8,1.2,0.8);
+let cube = createCube(0x0000AA, -3,0,-84, 0.8,1.2,0.8);
 cube.wantedposition = { x: cube.position.x, z: cube.position.z}
 scene.add(cube);
 
@@ -30,10 +30,16 @@ let render = function () {
         delta = 1;
     }
 
+    //let clouds = [];
+    //clouds.push( createCube( 0xFFFFFF, 0, 0, -84, 5,5,5) );
+    //scene.add(clouds[0]);
+
     moveCamera(delta);
     moveCube(delta);
     danceCube(delta);
-    messagesFade(delta, messages);
+    objectFade(delta, messages );
+    objectFade(delta, fadingObjects );
+    //moveObjectsLeft(delta * 3, clouds);
 
     renderer.render(scene, camera);
 };
