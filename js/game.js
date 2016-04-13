@@ -36,12 +36,6 @@ let createTotemMessage = function(text) {
     return textM;
 };
 
-let moveObjectsLeft = function(delta, objects) {
-    for (let i = 0; i < objects.length; i++) {
-        objects[i].position.x += delta;
-    }
-};
-
 let objectFade = function(delta, messages) {
     for (let i = 0; i < messages.length; i++) {
         let deltaOpacity = messages[i].material.wantedOpacity - messages[i].material.opacity;

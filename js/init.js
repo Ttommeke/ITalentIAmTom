@@ -19,6 +19,7 @@ fontLoader.load( "js/libs/MineCrafter.js", loadFont, undefined, undefined );
 
 initMap();
 initLights();
+initClouds();
 
 clock.getDelta();
 let render = function () {
@@ -30,16 +31,13 @@ let render = function () {
         delta = 1;
     }
 
-    //let clouds = [];
-    //clouds.push( createCube( 0xFFFFFF, 0, 0, -84, 5,5,5) );
-    //scene.add(clouds[0]);
-
     moveCamera(delta);
     moveCube(delta);
     danceCube(delta);
     objectFade(delta, messages );
     objectFade(delta, fadingObjects );
-    //moveObjectsLeft(delta * 3, clouds);
+    moveObjectsLeft(delta, clouds);
+    recycleClouds();
 
     renderer.render(scene, camera);
 };
