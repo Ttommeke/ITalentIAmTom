@@ -76,7 +76,7 @@ let initMessages = function() {
     eventMap.push(new eventMapItem( 26, 18, undefined, () => { hideMessage(1); hideMessage(2); }));
 
 
-    messages.push(createMessage('Free Time Forest'));
+    messages.push(createMessage('Spare Time Forest'));
     messages[3].position.set(-24, 1, -63);
     scene.add(messages[3]);
     showMessage(3);
