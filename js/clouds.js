@@ -8,8 +8,6 @@ let initClouds = function() {
             10 + 15*Math.random() , 2 , 2 + 15*Math.random()) );
         scene.add(clouds[i]);
     }
-
-    console.log(clouds);
 };
 
 let moveObjectsLeft = function(delta, objects) {

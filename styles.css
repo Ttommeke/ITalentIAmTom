@@ -1,0 +1,15 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+#bufWebglError {
+    display: none;
+    height: 40%;
+}
+
+#webglError {
+    display: none;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}

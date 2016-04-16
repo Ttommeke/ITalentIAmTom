@@ -5,7 +5,15 @@ let camera = createCamera();
 
 var clock = new THREE.Clock;
 
-let renderer = new THREE.WebGLRenderer();
+let renderer = undefined;
+try {
+    renderer = new THREE.WebGLRenderer();
+    //throw "error test";
+} catch (err) {
+    console.log("display error");
+    let errorBuf = document.getElementById("bufWebglError").style.display = "block";
+    let errorM = document.getElementById("webglError").style.display = "block";
+}
 renderer.setClearColor( 0x2ad3d6, 1 );
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
