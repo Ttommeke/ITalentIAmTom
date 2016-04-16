@@ -1,22 +1,123 @@
-<html onmousemove="moveMouse(event)" onkeydown="keyDownFunc(event)" onkeyup="keyUpFunc(event)">
-	<head>
-		<title>This is Tom!</title>
-		<link href='https://fonts.googleapis.com/css?family=Sarpanch:400,700' rel='stylesheet' type='text/css'>
-		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
-		</style>
-	</head>
-	<body>
-		<script src="js/libs/three.min.js"></script>
-		<script src="js/handyFunctions.js"></script>
-		<script src="js/camera.js"></script>
-		<script src="js/lights.js"></script>
-		<script src="js/map.js"></script>
-		<script src="js/input.js"></script>
-		<script src="js/game.js"></script>
-		<script src="js/clouds.js"></script>
-		<script src="js/init.js"></script>
+<html>
+  <head>
+    <title>This is Tom!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-	</body>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+    <style>
+        .splitdiv {
+            height: 50%;
+            width: 100%;
+
+            text-align: center;
+        }
+
+        #interactive {
+            background-image: url("bg.png")
+        }
+        #nonInteractive {
+            background-color: #116ea0;
+        }
+
+        #interactiveOverlay {
+            top: 0%;
+        }
+
+        #nonInteractiveOverlay {
+            top: 50%;
+        }
+
+        #interactive .infoBox {
+            color: #116ea0;
+        }
+
+        .infoBox {
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+        }
+        .infoBoxEmpty {
+            height: 40%;
+        }
+
+        .overlay {
+            position: fixed;
+            height: 50%;
+            width: 100%;
+            background-color: #444444;
+
+        }
+
+        .opacityFocus {
+            -webkit-animation-name: overlayStopHover; /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+            animation-name: overlayStopHover;
+            animation-duration: 0.5s;
+
+            opacity: 0.5;
+        }
+
+        .opacityFocus:hover {
+            -webkit-animation-name: overlayHover; /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+            animation-name: overlayHover;
+            animation-duration: 0.5s;
+
+            opacity: 0;
+        }
+
+        /* Chrome, Safari, Opera */
+        @-webkit-keyframes overlayHover {
+            0%   {opacity: 0.5;}
+            100%   {opacity: 0;}
+        }
+
+        /* Standard syntax */
+        @keyframes overlayHover {
+            0%   {opacity: 0.5;}
+            100%   {opacity: 0;}
+        }
+
+        /* Chrome, Safari, Opera */
+        @-webkit-keyframes overlayStopHover {
+            0%   {opacity: 0;}
+            100%   {opacity: 0.5;}
+        }
+
+        /* Standard syntax */
+        @keyframes overlayStopHover {
+            0%   {opacity: 0;}
+            100%   {opacity: 0.5;}
+        }
+    </style>
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+      <div class="splitdiv" id="interactive">
+          <div class="infoBoxEmpty col-lg-12" ></div>
+          <div class="infoBox " >Discover Tom the interactive way</div>
+      </div>
+      <div class="splitdiv" id="nonInteractive">
+          <div class="infoBoxEmpty col-lg-12" ></div>
+          <div class="infoBox" >Discover Tom the other way</div>
+      </div>
+      <a href="interactive.html" id="interactiveOverlay" class="overlay opacityFocus"></a>
+      <a href="nonInteractive.html" id="nonInteractiveOverlay" class="overlay opacityFocus"></a>
+
+  </body>
+
 </html>
