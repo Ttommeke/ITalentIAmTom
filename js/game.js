@@ -162,6 +162,12 @@ let initMessages = function() {
     scene.add(messages[18]);
     showMessage(18);
 
+
+    messages.push(createMessage('(work in progress)'));
+    messages[19].position.set(-6, -0.5, -100);
+    scene.add(messages[19]);
+    showMessage(19);
+
     eventMap.push(new eventMapItem(2,52,()=>{ startKazouMode(); }, undefined));
     eventMap.push(new eventMapItem(3,52,()=>{ startKazouMode(); }, undefined));
     eventMap.push(new eventMapItem(2,55,()=>{ startKazouMode(); }, undefined));
