@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div id="skill-overview" class="col-lg-offset-2 col-lg-8 block-comp skill-comp">
+
+            <div *ngFor="#skill of skills" class="skill" style="margin-top: {{(5 - skill.score) * 30}}px; min-width: {{100/skills.length}}%">
+                <div style="min-height: {{skill.score * 30}}px" class="skillBar">
+
+                </div>
+            </div>
+            <hr class="skillHr">
+            <div *ngFor="#skill of skills" class="skill" style="min-width: {{100/skills.length}}%">
+                {{skill.name}}
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</div>
