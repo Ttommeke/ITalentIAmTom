@@ -23,6 +23,10 @@ nav .nav a:hover {
     background-color: white;
 }
 
+.block-center {
+    text-align: center;
+}
+
 .activity-right {
     text-align: right;
 }

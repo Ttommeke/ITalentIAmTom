@@ -11,28 +11,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var TitleComponent;
+    var INGComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            TitleComponent = (function () {
-                function TitleComponent() {
-                    this.title = "New title";
+            INGComponent = (function () {
+                function INGComponent() {
+                    this.jump_id = "ing";
+                    this.title = "ING agile development!";
+                    this.paragraphs = [
+                        ""
+                    ];
                 }
-                TitleComponent = __decorate([
+                INGComponent = __decorate([
                     core_1.Component({
-                        selector: 'title-comp',
-                        templateUrl: 'app/title.component.html'
+                        selector: 'ing-comp',
+                        templateUrl: 'app/block.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], TitleComponent);
-                return TitleComponent;
+                ], INGComponent);
+                return INGComponent;
             }());
-            exports_1("TitleComponent", TitleComponent);
+            exports_1("INGComponent", INGComponent);
         }
     }
 });
-//# sourceMappingURL=title.component.js.map
+//# sourceMappingURL=ing.component.js.map

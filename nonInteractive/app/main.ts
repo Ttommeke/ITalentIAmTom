@@ -1,14 +1,22 @@
 import {bootstrap}    from 'angular2/platform/browser';
 import {NavComponent} from './nav.component';
-import {TitleComponent} from './title.component';
-import {BlockComponent} from './block.component';
+import {WhoisheComponent} from './whoishe.component';
 import {ImagestrapComponent} from './imagestrap.component';
 import {SkillComponent} from './skill.component';
 import {OverviewComponent} from './overview.component';
+import {AWSComponent} from './amazone.component';
+import {CebitComponent} from './cebit.component';
+import {CourseComponent} from './course.component';
+import {HackatonComponent} from './hackaton.component';
+import {INGComponent} from './ing.component';
 
 bootstrap(NavComponent);
-bootstrap(BlockComponent);
-bootstrap(TitleComponent);
+bootstrap(WhoisheComponent);
 bootstrap(ImagestrapComponent);
 bootstrap(SkillComponent);
 bootstrap(OverviewComponent);
+bootstrap(AWSComponent);
+bootstrap(CebitComponent);
+bootstrap(CourseComponent);
+bootstrap(HackatonComponent);
+bootstrap(INGComponent);

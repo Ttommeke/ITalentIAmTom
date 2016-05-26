@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
         <div id="activities-overview" class="col-lg-8 col-lg-offset-2 block-comp">
-            <h4>Begin overzicht</h4>
+            <h4>Begin overview</h4>
             <p>
-                Dit is het overzicht van al de uitgevoerde activiteiten.
+                This is the overview of all my extercised activities.
             </p>
         </div>
         <div *ngFor="#activity of activities; #evenAct = even" class="col-lg-8 col-lg-offset-2 block-comp">
 
             <div class="row">
-                <div class="col-lg-10"><h4>{{activity.title}}</h4></div><div class="col-lg-2 activity-gray activity-right">uren: {{activity.time_past}}</div>
+                <div class="col-lg-10"><h4>{{activity.title}}</h4></div><div class="col-lg-2 activity-gray activity-right">{{activity.time_past}} hours</div>
                 <div class="col-lg-12"><p>{{activity.description}}</p></div>
-                <div class="col-lg-8 activity-gray">{{activity.date}}</div>
+                <div class="col-lg-8 activity-gray">{{activity.date}} at {{activity.location}}</div>
                 <div class="col-lg-4 activity-right">
                     <span *ngIf="activity.sience" class="label label-primary">Science</span>
                     <span *ngIf="activity.semenaries" class="label label-success">Semenaries</span>
@@ -24,9 +24,11 @@
 
         </div>
         <div class="col-lg-8 col-lg-offset-2 block-comp">
-            <h4>Einde overzicht</h4>
+            <h4>End overview</h4>
             <p>
-                Di waren al mijn uitgevoerde activiteiten. Als u een beetje verder scrolt kan u enkele verder uitgewerkte verslagen over verschillende activiteiten zien.
+                These were all the extercised activities.
+                 If you scroll a little bit further down, you will see my personal reflextion about some of the activities.
+                 I made this selection based on my exprience and witch activities had the most impact on me as a person.
             </p>
             <p>
                 <span class="label label-default">totaal {{hours}} uur</span>
