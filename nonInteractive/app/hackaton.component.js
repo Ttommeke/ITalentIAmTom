@@ -23,6 +23,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.jump_id = "hackaton";
                     this.title = "Bose Sound Touch Hackaton!";
                     this.paragraphs = [
+                        "INLEIDING",
+                        "",
+                        "VERSLAG",
+                        "",
+                        "REFLECTIE",
                         ""
                     ];
                 }

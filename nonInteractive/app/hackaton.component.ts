@@ -8,6 +8,11 @@ export class HackatonComponent {
     jump_id = "hackaton";
     title = "Bose Sound Touch Hackaton!";
     paragraphs = [
+        "INLEIDING",
+        "",
+        "VERSLAG",
+        "",
+        "REFLECTIE",
         ""
     ];
 }
